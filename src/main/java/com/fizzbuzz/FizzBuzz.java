@@ -4,9 +4,9 @@ package com.fizzbuzz;
  * FizzBuzz class that implements the classic FizzBuzz algorithm.
  * 
  * Rules:
- * - If n is divisible by both 3 and 5, return "FizzBuzz"
- * - If n is divisible by 3, return "Fizz"
- * - If n is divisible by 5, return "Buzz"
+ * - If n contains digit 3 or is divisible by 3, return "Fizz"
+ * - If n contains digit 5 or is divisible by 5, return "Buzz"
+ * - If both conditions are true, return "FizzBuzz"
  * - Otherwise, return the string representation of n
  */
 public class FizzBuzz {
@@ -23,11 +23,15 @@ public class FizzBuzz {
             throw new IllegalArgumentException("Input must be a positive integer");
         }
         
-        if (n % 3 == 0 && n % 5 == 0) {
+        String numStr = String.valueOf(n);
+        boolean containsOrDivisibleBy3 = numStr.contains("3") || n % 3 == 0;
+        boolean containsOrDivisibleBy5 = numStr.contains("5") || n % 5 == 0;
+        
+        if (containsOrDivisibleBy3 && containsOrDivisibleBy5) {
             return "FizzBuzz";
-        } else if (n % 3 == 0) {
+        } else if (containsOrDivisibleBy3) {
             return "Fizz";
-        } else if (n % 5 == 0) {
+        } else if (containsOrDivisibleBy5) {
             return "Buzz";
         } else {
             return String.valueOf(n);
