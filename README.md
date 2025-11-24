@@ -1,3 +1,6 @@
+yanis bouchaib
+adel hammiche
+
 # FizzBuzz
 
 A Java implementation of the classic FizzBuzz algorithm using Maven.
@@ -44,5 +47,3 @@ src/main/java/com/fizzbuzz/FizzBuzz.java          # Main class
 src/test/java/com/fizzbuzz/FizzBuzzTest.java      # Unit tests
 pom.xml                                            # Maven configuration
 ```
-yanis bouchaib
-adel hammiche
